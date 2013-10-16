@@ -24,7 +24,14 @@ describe User do
   it { should_not be_admin }
   
   describe "post associations" do
-    # TODO: Listing 10.35
+    
+    before { @user.save }
+    let!(:older_post) do
+      FactoryGirl.create(:post, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_post) do
+      FactoryGirl.create(:post, user: @user, created_at: 1.hour.ago)
+    end
   end
   
   describe "with admin attribute set to 'true' " do
@@ -149,6 +156,16 @@ describe User do
       posts.each do |p|
         expect(Post.where(id: p.id)).to be_empty
       end
+    end
+    
+    describe "status" do
+      let(:unfollowed_post) do
+        FactoryGirl.create(:post, user: FactoryGirl.create(:user))
+      end
+      
+      its(:feed) { should include(newer_post) }
+      its(:feed) { should include(older_post) }
+      its(:feed) { should_not include(unfollowed_post) }
     end
   end
 end
