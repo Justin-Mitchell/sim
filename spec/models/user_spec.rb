@@ -17,9 +17,15 @@ describe User do
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
   it { should respond_to(:admin) }
+  it { should respond_to(:posts) }
+  it { should respond_to(:feed) }
 
   it { should be_valid }
   it { should_not be_admin }
+  
+  describe "post associations" do
+    # TODO: Listing 10.35
+  end
   
   describe "with admin attribute set to 'true' " do
     before do
@@ -122,5 +128,27 @@ describe User do
     it { should be_invalid }
   end
   
-  
+  describe "post associations" do
+    
+    before { @user.save }
+    let!(:older_post) do
+      FactoryGirl.create(:post, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_post) do
+      FactoryGirl.create(:post, user: @user, created_at: 1.hour.ago)
+    end
+    
+    it "should have the right posts in the right order" do
+      expect(@user.posts.to_a).to eq [newer_post, older_post]
+    end
+    
+    it "should destroy associated posts" do
+      posts = @user.posts.to_a
+      @user.destroy
+      expect(posts).not_to be_empty
+      posts.each do |p|
+        expect(Post.where(id: p.id)).to be_empty
+      end
+    end
+  end
 end

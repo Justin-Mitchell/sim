@@ -1,17 +1,30 @@
-<div class="center hero-unit">
-  <h1>Sudden Impact Media</h1>
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/post_form' %>
+      </section>
+    </aside>
+  </div>
+<% else %>
+  <div class="center hero-unit">
+    <h1>Sudden Impact Media</h1>
   
-  <h2>
-    Vix vocibus civibus ne, ei essent civibus erroribus est.
-  </h2>
-  <p>
-    Te vis mucius audiam accusata. Eos autem mucius invidunt an. Mei in minimum disputando, vim an porro choro euripidis, eius minim vim ad. Te ridens propriae periculis sed. Vim ut malorum delenit eleifend. Nobis explicari accusamus ex duo, nullam utamur in his.
-  </p>
-  <p>
-    An eos vero labitur expetenda, salutatus complectitur ei nam. Agam gloriatur nam in, everti petentium an sit, etiam vituperatoribus at vim. Te clita principes mel. Ut cum corrumpit deseruisse definitionem, in qui everti fastidii intellegam. Mea ei nisl tempor scripserit, pro ei voluptatibus delicatissimi.
-  </p>
+    <h2>
+      Vix vocibus civibus ne, ei essent civibus erroribus est.
+    </h2>
+    <p>
+      Te vis mucius audiam accusata. Eos autem mucius invidunt an. Mei in minimum disputando, vim an porro choro euripidis, eius minim vim ad. Te ridens propriae periculis sed. Vim ut malorum delenit eleifend. Nobis explicari accusamus ex duo, nullam utamur in his.
+    </p>
+    <p>
+      An eos vero labitur expetenda, salutatus complectitur ei nam. Agam gloriatur nam in, everti petentium an sit, etiam vituperatoribus at vim. Te clita principes mel. Ut cum corrumpit deseruisse definitionem, in qui everti fastidii intellegam. Mea ei nisl tempor scripserit, pro ei voluptatibus delicatissimi.
+    </p>
   
-  <%= link_to "Sign up now!", signup_path, class: 'btn btn-large btn-primary' %>
-</div>
+    <%= link_to "Sign up now!", signup_path, class: 'btn btn-large btn-primary' %>
+  </div>
 
-<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+  <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+<% end %>
