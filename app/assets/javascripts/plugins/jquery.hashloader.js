@@ -59,6 +59,7 @@ $(function() {
             
             /* Check if new hash link esists on a page */
             if(hashDestination.data("destination")){
+              
                 $.get(newHash, function(data){
                     /*!
                     *   CUSTOM CONFIGURATION

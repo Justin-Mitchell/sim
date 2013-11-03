@@ -17,3 +17,8 @@
     <p>New user? <%= link_to "Sign up now!", signup_path %></p>
   </div>
 </div>
+
+<% content_for(:dynamic_javascript) do %>
+  $('#navigation').show();
+  $('#navigation').css("opacity", "1");
+<% end %>

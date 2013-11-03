@@ -16,4 +16,8 @@ class StaticPagesController < ApplicationController
   def contact
   end
   
+  def project_1
+    render :layout => 'naked'
+  end
+  
 end
