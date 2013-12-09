@@ -126,7 +126,7 @@ $(document).ready(function(){
         pager: false,
         controls: false,
         useCSS: false,
-        pause: 10000
+        pause: 4000
     });
     /*
     *   PAGE | WORK
