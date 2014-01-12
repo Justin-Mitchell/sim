@@ -70,7 +70,11 @@
       <section class="portfolio-item-details" style="display: block;">
         <div class="row-fluid">
           <div class="span8">
-            <img src="http://placehold.it/1080x720">
+        		<a  
+        			 href="https://s3-us-west-2.amazonaws.com/suddenimpactvideo.com-videos/intro+video2.mp4"
+        			 style="display:block;width:1080;height:375px"  
+        			 id="player"> 
+        		</a> 
           </div>
           <div class="span4">
           <h5>Welcome</h5>
@@ -95,7 +99,7 @@
                 <a class="sicon-white sicon-pinterest" href="#"><i>Pinterest</i></a>
             </div>
             
-            <div class="submenu">
+            <div class="submenu" style="display:none">
               <ul>
                 <li>
                   <span>llustration</span>
@@ -259,7 +263,7 @@
 <!-- END PAGE | WORK -->
 
 <!-- PAGE | CLIENTS -->
-<div class="pages" id="page-clients">
+<div class="pages" id="page-clients" style="display:none;">
     <div class="container">
         <h4 class="line-divider-inline center">Satisfied clients</h4>
         <!-- Client logos -->
@@ -354,18 +358,13 @@
                                 </div>
                                 <div class="item">
                                   Most important we let you know how many people are viewing your video so you know that your advertising dollar is working for you.
-                                    <h5>Happy client</h5>
-                                </div>
-                                <div class="item">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                    <h5>Happy client</h5>
+                                    <h5>Getting Your Heard In A Noisy World!</h5>
                                 </div>
                             </div>
                             <!-- Carousel indicators -->
                             <ol class="carousel-indicators">
                                 <li data-target="#quote-slider" data-slide-to="0" class="active"></li>
                                 <li data-target="#quote-slider" data-slide-to="1"></li>
-                                <li data-target="#quote-slider" data-slide-to="2"></li>
                             </ol>
                         </div>
                     </div>
@@ -474,7 +473,7 @@
 <!-- END PAGE | ABOUT -->
 
 <!-- PAGE | TWITTER -->
-<div class="pages white paralax" id="page-twitter">
+<div class="pages white paralax" id="page-twitter" style="display:none;">
     <!-- Page overlay -->
     <div class="overlay"></div>
     
@@ -496,7 +495,7 @@
 <!-- END PAGE | TWITTER -->
 
 <!-- PAGE | VIDEOS -->
-<div class="pages" id="page-video">
+<div class="pages" id="page-video" style="display:none">
     <div class="container">
         <!-- Header -->
         <header>
@@ -668,9 +667,9 @@
                 <div class="span6">
                     <h5>Drop Us A Line</h5>
                     <form>
-                        <input type="text" class="span12" placeholder="Title" required="required">
+                        <input type="text" class="span12" placeholder="Name" required="required">
                         <input type="email" class="span12" placeholder="Email" required="required">
-                        <textarea rows="10" class="span12" required="required"></textarea>
+                        <textarea rows="10" class="span12" placeholder="Some Words On How We Can Help..." required="required"></textarea>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
@@ -683,7 +682,8 @@
                             <a href="#" class="sicon-phone"><i>Phone</i></a>
                         </div> 
                         <div class="media-body smallFontBy08">
-                            (+1) 702 418-4771 ( JEFF ) | (+1) 702 245-8569 ( TIM )
+                            (+1) 702 418-4771 <em>Jeff Bradshaw</em><br/>
+                            (+1) 702 245-8569 <em>Tim Lowe</em>
                         </div>
                     </div>
                     <div class="media">
@@ -699,7 +699,8 @@
                             <a href="#" class="sicon-mail"><i>email</i></a>
                         </div> 
                         <div class="media-body smallFontBy08">
-                            bradshawsellinglv@gmail.com | timlowsellsvegas@gmail.com
+                            bradshawsellinglv@gmail.com<br/>
+                            timlowsellsvegas@gmail.com
                         </div>
                     </div>
                     <div class="media">
@@ -735,3 +736,12 @@
     </div>
 </div>
 <!-- END PAGE | CONTACT -->
+
+<script>
+	flowplayer("player", "/assets/flowplayer/flowplayer-3.2.18.swf", {
+	  clip: {
+	    autoPlay: false,
+      autoBuffering: true,
+	  }
+	});
+</script>
