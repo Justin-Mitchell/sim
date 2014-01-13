@@ -3,7 +3,6 @@ class CreateSocialLinks < ActiveRecord::Migration
     create_table :social_links do |t|
       t.string :service
       t.string :url
-      t.integer :user_id
 
       t.timestamps
     end

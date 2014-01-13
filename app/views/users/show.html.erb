@@ -15,6 +15,8 @@
         <%= render @posts %>
       </ol>
       <%= will_paginate @posts %>
+    <% else %>
+      <h3>No Videos or BlogPosts have been submitted yet.</h3>
     <% end %>
   </div>
 </div>
