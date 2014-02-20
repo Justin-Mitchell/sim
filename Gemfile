@@ -3,6 +3,12 @@ ruby '2.0.0'
 #ruby-gemset=sim
 
 gem 'rails', '4.0.0'
+gem 'sass-rails', '4.0.0'
+gem 'uglifier', '2.3.0'
+gem 'coffee-rails', '4.0.1'
+gem 'jquery-rails', '3.0.4'
+gem 'turbolinks', '1.3.0'
+gem 'jbuilder', '1.2'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.1.2'
@@ -31,13 +37,6 @@ group :test do
   gem 'cucumber-rails', '1.4.0', :require => false
   gem 'database_cleaner', github: 'bmabey/database_cleaner'
 end
-
-gem 'sass-rails', '4.0.0'
-gem 'uglifier', '2.3.0'
-gem 'coffee-rails', '4.0.1'
-gem 'jquery-rails', '3.0.4'
-gem 'turbolinks', '1.3.0'
-gem 'jbuilder', '1.2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
